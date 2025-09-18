@@ -1,60 +1,17 @@
 import React from 'react'
 import SideBar from '../SideBar/SideBar'
 
-type Props = {}
 
-const Add = (props: Props) => {
+
+const AddCourt = () => {
+ 
+
+  
   return (
     <div>
        <div className="page-wrapper compact-wrapper" id="pageWrapper">
   <div className="page-header">
-    <div className="header-wrapper row m-0">
-      <div className="header-logo-wrapper col-auto p-0">
-        <div className="logo-wrapper"><a href="index.html"> <img className="img-fluid for-light" src="../assets/images/logo/logo.png" /><img className="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" /></a></div>
-        <div className="toggle-sidebar">
-          <svg className="sidebar-toggle"> 
-            <use href="https://admin.pixelstrap.net/zono/assets/svg/icon-sprite.svg#stroke-animation" />
-          </svg>
-        </div>
-      </div>
-      <form className="col-sm-4 form-inline search-full d-none d-xl-block" action="#" method="get">
-        <div className="form-group">
-          <div className="Typeahead Typeahead--twitterUsers">
-            <div className="u-posRelative">
-              <input className="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Type to Search .." name="q" />
-              <svg className="search-bg svg-color">
-                <use href="https://admin.pixelstrap.net/zono/assets/svg/icon-sprite.svg#search" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </form>
-      <div className="nav-right col-xl-8 col-lg-12 col-auto pull-right right-header p-0">
-        <ul className="nav-menus">
-        
-          
-         
-          <li className="profile-nav onhover-dropdown pe-0 py-0">
-            <div className="d-flex align-items-center profile-media"><img className="b-r-25" src="../assets/images/dashboard/profile.png" alt />
-              <div className="flex-grow-1 user"><span>Helen Walter</span>
-                <p className="mb-0 font-nunito">Admin 
-                  <svg>
-                    <use href="https://admin.pixelstrap.net/zono/assets/svg/icon-sprite.svg#header-arrow-down" />
-                  </svg>
-                </p>
-              </div>
-            </div>
-            <ul className="profile-dropdown onhover-show-div">
-              <li><a href="user-profile.html"><i data-feather="user" /><span>Account </span></a></li>
-              <li><a href="letter-box.html"><i data-feather="mail" /><span>Inbox</span></a></li>
-              <li><a href="task.html"><i data-feather="file-text" /><span>Taskboard</span></a></li>
-              <li><a href="edit-profile.html"><i data-feather="settings" /><span>Settings</span></a></li>
-              <li><a href="login.html"> <i data-feather="log-in" /><span>Log Out</span></a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
+   
   </div>
   <div className="page-body-wrapper"> 
 
@@ -80,7 +37,7 @@ const Add = (props: Props) => {
         <div className="page-title">
           <div className="row">
             <div className="col-xl-4 col-sm-7 box-col-3">
-              <h3>Thêm Phòng</h3>
+              <h3>Thêm Tòa</h3>
             </div>
            
             
@@ -98,10 +55,10 @@ const Add = (props: Props) => {
                       <div className="tab-content" id="add-product-pills-tabContent">
                         <div className="tab-pane fade show active" id="detail-product" role="tabpanel" aria-labelledby="detail-product-tab">
                           <div className="sidebar-body">
-                            <form className="row g-2">
+                            <form  className="row g-2">
                               <label className="form-label col-12 m-0" htmlFor="productTitle1">Số phòng: <span className="txt-danger"> *</span></label>
                               <div className="col-12 custom-input">
-                                <input className="form-control is-invalid" id="productTitle1" type="text" required />
+                                <input className="form-control is-invalid" id="productTitle1" type="text" name="name" />
                                 <div className="valid-feedback">Looks good!</div>
                                 <div className="invalid-feedback">A product name is required and recommended to be unique.</div>
                               </div>
@@ -213,7 +170,7 @@ const Add = (props: Props) => {
                                       <div className="col-12"> 
                                       </div>
                                     </div>
-                                   <button className="btn btn-primary" >Thêm phòng</button>
+                                   <button type='submit' className="btn btn-primary" >Thêm phòng</button>
                             </form>
                           </div>
                         </div>
@@ -252,4 +209,4 @@ const Add = (props: Props) => {
   )
 }
 
-export default Add
+export default AddCourt

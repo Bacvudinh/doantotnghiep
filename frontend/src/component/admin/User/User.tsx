@@ -4,7 +4,7 @@ import SideBar from '../SideBar/SideBar'
 
 type Props = {}
 
-const Category = (props: Props) => {
+const User = (props: Props) => {
   return (
     <div>
           <div className="page-wrapper compact-wrapper" id="pageWrapper">
@@ -88,7 +88,7 @@ const Category = (props: Props) => {
         <div className="page-title">
           <div className="row">
             <div className="col-xl-4 col-sm-7 box-col-3">
-              <h3>Danh sách phòng</h3>
+              <h3>Danh sách người dùng</h3>
             </div>
             
           </div>
@@ -100,51 +100,31 @@ const Category = (props: Props) => {
           <div className="col-sm-12"> 
             <div className="card"> 
               <div className="card-body">
-                <div className="list-product-header">
-                  <div> 
-                  
-                    <Link to={`/add-category`}><a className="btn btn-primary" href=""><i className="fa fa-plus" />Thêm tầng</a></Link>
-                  </div>
-                  
-                </div>
+              
                 <div className="list-product">
                   <table className="table" id="project-status">
                     <thead> 
                       <tr> 
-                        {/* <th>
-                          <div className="form-check"> 
-                            <input className="form-check-input checkbox-primary" type="checkbox" />
-                          </div>
-                        </th> */}
+                    
                          <th> <span className="f-light f-w-600">Thứ tự</span></th>
+                        <th> <span className="f-light f-w-600">Tên tòa nhà</span></th>
                         <th> <span className="f-light f-w-600">Số tầng</span></th>
-                        <th> <span className="f-light f-w-600">Mã phòng</span></th>
-                        <th> <span className="f-light f-w-600">Mã tòa</span></th>
+                
+                      
                        
                       </tr>
                     </thead>
                     <tbody> 
                       <tr className="product-removes">
-                        {/* <td>
-                          <div className="form-check"> 
-                            <input className="form-check-input checkbox-primary" type="checkbox" />
-                          </div>
-                        </td> */}
                        <td> 
                           <p className="f-light">1</p>
                         </td>
+                       <td> 
+                          <p className="f-light">A3</p>
+                        </td>
                        
-                        <td> 
-                          <div className="light-product-box"><img className="img-fluid" src="../assets/images/dashboard-8/product-categories/laptop.png" alt="laptop" /></div>
-                        </td>
-                         <td> 
-                          <div className="product-names">
-                           
-                            <p>A201</p>
-                          </div>
-                        </td>
-                        <td> 
-                          <p className="f-light">A1</p>
+                       <td> 
+                          <p className="f-light">10</p>
                         </td>
                         
                       </tr>
@@ -183,4 +163,4 @@ const Category = (props: Props) => {
   )
 }
 
-export default Category
+export default User
