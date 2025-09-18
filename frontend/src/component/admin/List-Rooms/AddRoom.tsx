@@ -1,9 +1,16 @@
-import React from 'react'
-import SideBar from '../SideBar/SideBar'
+import SideBar from "../SideBar/SideBar"
 
-type Props = {}
 
-const Add = (props: Props) => {
+
+
+
+const Add = () => {
+
+
+ 
+
+
+
   return (
     <div>
        <div className="page-wrapper compact-wrapper" id="pageWrapper">
@@ -35,7 +42,7 @@ const Add = (props: Props) => {
           
          
           <li className="profile-nav onhover-dropdown pe-0 py-0">
-            <div className="d-flex align-items-center profile-media"><img className="b-r-25" src="../assets/images/dashboard/profile.png" alt />
+            <div className="d-flex align-items-center profile-media"><img className="b-r-25" src="../assets/images/dashboard/profile.png" />
               <div className="flex-grow-1 user"><span>Helen Walter</span>
                 <p className="mb-0 font-nunito">Admin 
                   <svg>
@@ -60,7 +67,7 @@ const Add = (props: Props) => {
 
     <div className="sidebar-wrapper" data-layout="stroke-svg">
       <div>
-        <div className="logo-wrapper"><a href="index.html"> <img className="img-fluid for-light" src="../assets/images/logo/logo.png" /><img className="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" alt /></a>
+        <div className="logo-wrapper"><a href="index.html"> <img className="img-fluid for-light" src="../assets/images/logo/logo.png" /><img className="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" /></a>
           <div className="toggle-sidebar">
             <svg className="sidebar-toggle"> 
               <use href="https://admin.pixelstrap.net/zono/assets/svg/icon-sprite.svg#toggle-icon" />
