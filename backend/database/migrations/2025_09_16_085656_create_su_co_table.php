@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('su_co', function (Blueprint $table) {
-                 Schema::create('su_co', function (Blueprint $table) {
+                
             $table->id();
             $table->foreignId('phong_id')->constrained('phong')->cascadeOnDelete();
             $table->text('mo_ta');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('trang_thai_su_co', 200)->nullable();
             $table->timestamps();
         });
-        });
+      
     }
 
     /**

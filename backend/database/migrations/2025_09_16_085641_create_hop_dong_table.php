@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hop_dong', function (Blueprint $table) {
-           Schema::create('hop_dong', function (Blueprint $table) {
+  
     $table->id();
     $table->foreignId('phong_id')->constrained('phong')->cascadeOnDelete();
     $table->foreignId('khach_id')->constrained('tai_khoan_su_dung')->cascadeOnDelete();
@@ -49,7 +49,7 @@ return new class extends Migration
     $table->timestamps();
 });
 
-        });
+        
     }
 
     /**

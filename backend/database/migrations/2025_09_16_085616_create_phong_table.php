@@ -19,12 +19,12 @@ return new class extends Migration
             $table->decimal('dien_tich', 5, 2);
             $table->decimal('gia_thue', 12, 2);
             $table->integer('so_nguoi_toi_da');
-            $table->text('tien_nghi')->nullable();
-            $table->foreignId('tang_id')->nullable()->constrained('tang')->nullOnDelete();
-            $table->text('hinh_anh')->nullable();
-            $table->enum('trang_thai', ['trong','dangthue','baotri'])->default('trong');
-            $table->binary('anh3d')->nullable();
-            $table->timestamps();
+            // $table->text('tien_nghi')->nullable();
+            // $table->foreignId('tang_id')->nullable()->constrained('tang')->nullOnDelete();
+            // $table->text('hinh_anh')->nullable();
+            // $table->enum('trang_thai', ['trong','dangthue','baotri'])->default('trong');
+            // $table->binary('anh3d')->nullable();
+            // $table->timestamps();
         });
     }
 

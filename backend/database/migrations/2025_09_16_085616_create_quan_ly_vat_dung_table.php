@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('so_luong');
             $table->enum('tinh_trang', ['tot','hongnhe','hongnang','dangbt'])->default('tot');
             $table->text('mo_ta')->nullable();
-             $table->string('hinh_anh')->nullable()->after('ten_vat_dung');
+            $table->string('hinh_anh')->nullable();
             $table->foreignId('phong_id')->constrained('phong')->cascadeOnDelete();
             $table->timestamps();
         });
