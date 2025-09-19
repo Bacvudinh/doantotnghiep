@@ -5,9 +5,182 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
+<style>
+ .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .header select {
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 15px 0 10px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px;
+    }
+
+    .card span.value {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .card span.label {
+      font-size: 14px;
+      text-align: center;
+      color: #555;
+    }
+
+    .blue {
+      color: #1d4ed8; /* xanh */
+    }
+
+    .red {
+      color: #dc2626; /* đỏ */
+    }
+    .sidebar {
+      width: 240px;
+      background: #fff;
+      height: 100vh;
+      padding: 20px 0;
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .menu-section {
+      margin-bottom: 30px;
+    }
+
+    .menu-section h4 {
+      font-size: 12px;
+      font-weight: bold;
+      color: #6b7280;
+      margin: 10px 20px;
+      text-transform: uppercase;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      color: #374151;
+      text-decoration: none;
+      font-size: 15px;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .menu-item:hover {
+      background: rgba(220, 219, 219, 0.893);
+    }
+
+    .menu-item i {
+      font-size: 18px;
+      margin-right: 12px;
+      color: #374151;
+    }
+
+    .menu-item span {
+      flex-grow: 1;
+    }
+
+    .menu-item .arrow {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+  </style>
+  <!-- Font Awesome CDN để có icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   <body>
     <div id="root"></div>
+    
     <script type="module" src="/src/main.tsx"></script>
+    <!-- <script src="/src/assets/js/jquery-3.3.1.min.js"></script>
+     <script src="/src/assets/js/jquery-ui.min.js"></script>
+      <script src="/src/assets/js/jquery.magnific-popup.min.js"></script>
+       <script src="/src/assets/js/jquery.nice-select.min.js"></script>
+        <script src="/src/assets/js/jquery.slicknav.js"></script>
+        <script src="/src/assets/js/owl.carousel.min.js"></script>
+   <script src="/src/assets/js/bootstrap.min.js"></script>
+         <script src="/src/assets/js/main.js"></script> -->
+          <!-- â -->
+           <!-- <script src="./src/assets/admin/js/jquery.min.js"></script>
+ 
+    <script src="./src/assets/admin/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="./src/assets/admin/js/icons/feather-icon/feather.min.js"></script>
+    <script src="./src/assets/admin/js/icons/feather-icon/feather-icon.js"></script> -->
+
+    <!-- <script src="./src/assets/admin/js/scrollbar/simplebar.js"></script> -->
+    <!-- <script src="./src/assets/admin/js/scrollbar/custom.js"></script> -->
+    <!-- Sidebar jquery-->
+    <!-- <script src="./src/assets/admin/js/config.js"></script>
+  
+    <script src="./src/assets/admin/js/sidebar-menu.js"></script>
+
+    <script src="./src/assets/admin/js/slick/slick.min.js"></script>
+    <script src="./src/assets/admin/js/slick/slick.js"></script>
+    <script src="./src/assets/admin/js/header-slick.js"></script>
+    <script src="./src/assets/admin/js/chart/morris-chart/raphael.js"></script>
+    <script src="./src/assets/admin/js/chart/morris-chart/morris.js"> </script>
+    <script src="./src/assets/admin/js/chart/morris-chart/prettify.min.js"></script>
+   
+    <script src="./src/assets/admin/js/chart/apex-chart/stock-prices.js"></script>
+    <script src="./src/assets/admin/js/chart/apex-chart/moment.min.js"></script>
+    <script src="./src/assets/admin/js/notify/bootstrap-notify.min.js"></script>
+    
+    <script src="./src/assets/admin/js/notify/index.js"></script>
+    <script src="./src/assets/admin/js/datatable/datatables/jquery.dataTables.min.js"></script>
+    <script src="./src/assets/admin/js/datatable/datatables/datatable.custom.js"></script>
+    <script src="./src/assets/admin/js/datatable/datatables/datatable.custom1.js"></script>
+    <script src="./src/assets/admin/js/owlcarousel/owl.carousel.js"></script>
+    <script src="./src/assets/admin/js/owlcarousel/owl-custom.js"></script>
+    <script src="./src/assets/admin/js/typeahead/handlebars.js"></script>
+    <script src="./src/assets/admin/js/typeahead/typeahead.bundle.js"></script>
+    <script src="./src/assets/admin/js/typeahead/typeahead.custom.js"></script>
+    <script src="./src/assets/admin/js/typeahead-search/handlebars.js"></script>
+    <script src="./src/assets/admin/js/typeahead-search/typeahead-custom.js"></script>
+    <script src="./src/assets/admin/js/height-equal.js"></script> -->
+    <!-- Plugins JS Ends-->
+    <!-- Theme js-->
+    <!-- <script src="./src/assets/admin/js/script.js"></script> -->
+    <!-- <script src="./src/assets/admin/js/theme-customizer/customizer.js"></script> -->
   </body>
+  
 </html>
