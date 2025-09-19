@@ -103,7 +103,7 @@ const ListProducts = (props: Props) => {
                 <div className="list-product-header">
                   <div> 
                   
-                    <Link to={`/add-product`}><a className="btn btn-primary" href=""><i className="fa fa-plus" />Thêm phòng</a></Link>
+                    <Link to={`/add-room`}><a className="btn btn-primary" href=""><i className="fa fa-plus" />Thêm phòng</a></Link>
                   </div>
                   {/* <div className="collapse" id="collapseProduct">
                     <div className="card card-body list-product-body">

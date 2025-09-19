@@ -235,28 +235,17 @@ const OrderList = (props: Props) => {
                           <ul className="header-left">
                             <li>
                               {" "}
-                              <span className="f-w-700">General </span>
+                              <span className="f-w-700">Trạng thái </span>
                             </li>
                             <li>
                               {" "}
-                              <span className="f-w-700">General </span>
+                              <span className="f-w-700">Khiếu nại </span>
                             </li>
                             <li>
                               {" "}
-                              <span className="f-w-700">General </span>
+                              <span className="f-w-700">Hoàn tiền </span>
                             </li>
-                            <li>
-                              {" "}
-                              <span className="f-w-700">General </span>
-                            </li>
-                            <li>
-                              {" "}
-                              <span className="f-w-700">General </span>
-                            </li>
-                            <li>
-                              {" "}
-                              <span className="f-w-700">General </span>
-                            </li>
+                            
                           </ul>
                         </div>
                       </div>
@@ -266,28 +255,21 @@ const OrderList = (props: Props) => {
                             <ul className="header-left">
                               <li>
                                 {" "}
-                                <span className="f-w-700">General </span>
+                                <span className="f-w-700">Tất cả </span>
                               </li>
                               <li>
                                 {" "}
-                                <span className="f-w-700">General </span>
+                                <span className="f-w-700">Đang chờ duyệt </span>
                               </li>
                               <li>
                                 {" "}
-                                <span className="f-w-700">General </span>
+                                <span className="f-w-700">Thành Công </span>
                               </li>
                               <li>
                                 {" "}
-                                <span className="f-w-700">General </span>
+                                <span className="f-w-700">Hủy </span>
                               </li>
-                              <li>
-                                {" "}
-                                <span className="f-w-700">General </span>
-                              </li>
-                              <li>
-                                {" "}
-                                <span className="f-w-700">General </span>
-                              </li>
+                            
                             </ul>
                           </div>
                         </div>
