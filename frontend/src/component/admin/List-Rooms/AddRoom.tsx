@@ -1,13 +1,11 @@
-import SideBar from "../SideBar/SideBar"
 
+import SideBar from "../SideBar/SideBar"
 
 
 
 
 const Add = () => {
 
-
- 
 
 
 
@@ -105,10 +103,10 @@ const Add = () => {
                       <div className="tab-content" id="add-product-pills-tabContent">
                         <div className="tab-pane fade show active" id="detail-product" role="tabpanel" aria-labelledby="detail-product-tab">
                           <div className="sidebar-body">
-                            <form className="row g-2">
+                            <form  className="row g-2">
                               <label className="form-label col-12 m-0" htmlFor="productTitle1">Số phòng: <span className="txt-danger"> *</span></label>
                               <div className="col-12 custom-input">
-                                <input className="form-control is-invalid" id="productTitle1" type="text" required />
+                                <input className="form-control is-invalid" id="productTitle1" type="text"  />
                                 <div className="valid-feedback">Looks good!</div>
                                 <div className="invalid-feedback">A product name is required and recommended to be unique.</div>
                               </div>
@@ -127,7 +125,7 @@ const Add = () => {
 <input
             type="file"
             accept=".png,.jpg,.jpeg,.gif,.svg"
-            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" 
           />
           <p className="text-sm text-gray-600">
             Drag your image here, or{" "}
@@ -178,49 +176,52 @@ const Add = () => {
                                <div className="row g-3 custom-input">
                                       <div className="col-sm-6">
                                         <label className="form-label">Mã tòa nhà:</label>
-                                        <select className="form-select" aria-label="Default select example">
+                                        {/* <select className="form-select" aria-label="Default select example">
                                           <option selected>A1</option>
                                           <option value={1}>A2</option>
                                           <option value={2}>A3</option>
-                                        </select>
+                                        </select> */}
+                                         <input className="form-control is-invalid" id="productTitle1" type="text"  />
                                       </div>
                                       <div className="col-sm-6">
                                         <label className="form-label">Mã tầng:</label>
-                                        <select className="form-select" aria-label="Default select example">
+                                        {/* <select className="form-select" aria-label="Default select example">
                                           <option selected>A1.201</option>
                                           <option value={1}>A1.202</option>
                                           <option value={2}>A1.203</option>
                                         
-                                        </select>
+                                        </select> */}
+                                        <input className="form-control is-invalid" id="productTitle1" type="text"  />
                                       </div>
                                       <div className="col-sm-6">
                                         <label className="form-label">Trạng thái:</label>
-                                        <select className="form-select" aria-label="Default select example">
+                                        {/* <select className="form-select" aria-label="Default select example">
                                           <option selected>Trống</option>
                                           <option value={1}>Đã cho thuê</option>
                                           <option value={2}>Bảo trì</option>
-                                        </select>
+                                        </select> */
+                                        <input className="form-control is-invalid" id="productTitle1" type="text"  />}
                                       </div>
                                       <div className="col-lg-3 col-sm-6">
                                         <label className="form-label" htmlFor="exampleFormControlInput1">Diện tích: <span className="txt-danger">*</span></label>
-                                        <input className="form-control" id="exampleFormControlInput1" type="text" />
+                                        <input className="form-control" id="exampleFormControlInput1" type="text"   />
                                       </div>
                                       <div className="col-lg-3 col-sm-6">
                                         <label className="form-label" htmlFor="exampleFormControlInputa">Số người tối đa: <span className="txt-danger">*</span></label>
-                                        <input className="form-control" id="exampleFormControlInputa" type="number" defaultValue={7} min={0} />
+                                        <input className="form-control" id="exampleFormControlInputa" type="number" defaultValue={7} min={0}  />
                                       </div>
                                       <div className="col-lg-3 col-sm-6"> 
                                         <label className="form-label" htmlFor="exampleFormControlInputb">Giá thuê: <span className="txt-danger">*</span></label>
-                                        <input className="form-control" id="exampleFormControlInputb" type="number" />
+                                        <input className="form-control" id="exampleFormControlInputb" type="number"   />
                                       </div>
                                       <div className="col-lg-3 col-sm-6"> 
                                         <label className="form-label" htmlFor="exampleFormControlInputc">Tiện nghi: <span className="txt-danger">*</span></label>
-                                        <input className="form-control" id="exampleFormControlInputc" type="number" />
+                                        <input className="form-control" id="exampleFormControlInputc" type="number"  />
                                       </div>
                                       <div className="col-12"> 
                                       </div>
                                     </div>
-                                   <button className="btn btn-primary" >Thêm phòng</button>
+                                   <button className="btn btn-primary" type='submit'>Thêm phòng</button>
                             </form>
                           </div>
                         </div>

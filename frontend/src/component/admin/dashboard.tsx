@@ -7,9 +7,8 @@ import Charts from "./Charts/Charts";
 import OrderTable from "./OrdersTable/OrderTable";
 import SideBar from "./SideBar/SideBar";
 
-type Props = {};
 
-const Dashboard = (props: Props) => {
+const Dashboard = () => {
   return (
     <div>
       <div className="page-wrapper compact-wrapper" id="pageWrapper">
