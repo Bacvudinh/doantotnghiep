@@ -10,7 +10,7 @@ class ToaNha extends Model
     use HasFactory;
 
     protected $table = 'toa_nha';
-    protected $fillable = ['ten_toa_nha', 'dia_chi', 'so_tang', 'mo_ta'];
+    protected $fillable = ['ten_toa_nha', 'dia_chi', 'so_tang', 'tien_ich'];
 
     public function tangs()
     {

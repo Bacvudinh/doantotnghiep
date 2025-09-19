@@ -1,12 +1,30 @@
 import React from 'react'
 import SideBar from '../SideBar/SideBar'
+import {useForm} from 'react-hook-form'
+import type { ToaNha } from '../../../interface/room'
 
+
+import { themToaNha } from '../../../service/room'
 
 
 const AddCourt = () => {
  
+const {register,handleSubmit,reset,formState:{errors}} = useForm<ToaNha>()
+  const onsubmit = async (data: ToaNha) => {
+    try {
+      const payload = {
+        ...data,so_tang:Number(data.so_tang)
+      }
+      const response = await themToaNha(payload);
+    console.log("Data gửi:",response.data);
+      reset();
+      
+    } catch (error) {
+      alert("Đã xảy ra lỗi");
+      console.error(error);
+    }
+  };
 
-  
   return (
     <div>
        <div className="page-wrapper compact-wrapper" id="pageWrapper">
@@ -17,11 +35,11 @@ const AddCourt = () => {
 
     <div className="sidebar-wrapper" data-layout="stroke-svg">
       <div>
-        <div className="logo-wrapper"><a href="index.html"> <img className="img-fluid for-light" src="../assets/images/logo/logo.png" /><img className="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" alt /></a>
+        <div className="logo-wrapper"><a href="index.html"> <img className="img-fluid for-light" src="../assets/images/logo/logo.png" /><img className="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" /></a>
           <div className="toggle-sidebar">
-            <svg className="sidebar-toggle"> 
+            {/* <svg className="sidebar-toggle"> 
               <use href="https://admin.pixelstrap.net/zono/assets/svg/icon-sprite.svg#toggle-icon" />
-            </svg>
+            </svg> */}
           </div>
         </div>
         <div className="logo-icon-wrapper"><a href="index.html"><img className="img-fluid" src="../assets/images/logo/logo-icon.png" /></a></div>
@@ -55,120 +73,36 @@ const AddCourt = () => {
                       <div className="tab-content" id="add-product-pills-tabContent">
                         <div className="tab-pane fade show active" id="detail-product" role="tabpanel" aria-labelledby="detail-product-tab">
                           <div className="sidebar-body">
-                            <form  className="row g-2">
-                              <label className="form-label col-12 m-0" htmlFor="productTitle1">Số phòng: <span className="txt-danger"> *</span></label>
+                            <form onSubmit={handleSubmit(onsubmit)}  className="row g-2">
+                              <label className="form-label col-12 m-0" htmlFor="productTitle1">Ten tòa nhà: <span className="txt-danger"> *</span></label>
                               <div className="col-12 custom-input">
-                                <input className="form-control is-invalid" id="productTitle1" type="text" name="name" />
-                                <div className="valid-feedback">Looks good!</div>
-                                <div className="invalid-feedback">A product name is required and recommended to be unique.</div>
+                                <input className="form-control is-invalid" id="productTitle1" type="text" {...register('ten_toa_nha',{required:"Phải nhập tên tòa nhà"})} />                           
+                                 {errors.ten_toa_nha && (
+          <p className="text-red-500">{errors.ten_toa_nha.message}</p>
+        )}
                               </div>
-                                <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Ảnh phòng:
-        </label>
-        
-        <div
-          className="relative flex flex-col items-center justify-center gap-2 
-                     p-10 border-2 border-dashed rounded-md cursor-pointer 
-                     bg-gray-100 hover:border-blue-400 transition"
-        >
-          {/* Icon */}
-         
-<input
-            type="file"
-            accept=".png,.jpg,.jpeg,.gif,.svg"
-            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-          />
-          <p className="text-sm text-gray-600">
-            Drag your image here, or{" "}
-            <span className="text-blue-600 underline">browse</span>
-          </p>
-          <p className="text-xs text-gray-500">SVG, PNG, JPG or GIF</p>
-
-          {/* Input file (ẩn) */}
-          
-        </div>
-      </div>
-
-      {/* Upload gallery */}
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Product Gallery
-        </label>
-        <div
-          className="relative flex flex-col items-center justify-center gap-2 
-                     p-10 border-2 border-dashed rounded-md cursor-pointer 
-                     bg-gray-100 hover:border-blue-400 transition"
-        >
-          {/* Icon */}
-         
- <input
-            type="file"
-            accept=".png,.jpg,.jpeg,.gif,.svg"
-            multiple
-            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-          />
-          <p className="text-sm text-gray-600">Drag files here</p>
-          <p className="text-xs text-gray-500">Add Product Gallery Images</p>
-
-          {/* Input file multiple */}
-         
-        </div>
-      </div>
-
-      {/* Submit button */}
-      {/* <div className="pt-4">
-        <button
-          type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-        >
-          Save Product
-        </button>
-      </div> */}
                                <div className="row g-3 custom-input">
                                       <div className="col-sm-6">
-                                        <label className="form-label">Mã tòa nhà:</label>
-                                        <select className="form-select" aria-label="Default select example">
-                                          <option selected>A1</option>
-                                          <option value={1}>A2</option>
-                                          <option value={2}>A3</option>
-                                        </select>
+                                        <label className="form-label">Địa chỉ:</label>
+                                     <input className="form-control is-invalid" type="text"   {...register('dia_chi',{required:"Phải nhập địa chỉ"})}/>   
+                                       {errors.dia_chi && (<p className="text-red-500">{errors.dia_chi.message}</p>)}
+                                      
+        
                                       </div>
                                       <div className="col-sm-6">
-                                        <label className="form-label">Mã tầng:</label>
-                                        <select className="form-select" aria-label="Default select example">
-                                          <option selected>A1.201</option>
-                                          <option value={1}>A1.202</option>
-                                          <option value={2}>A1.203</option>
-                                        
-                                        </select>
+                                        <label className="form-label">Số tầng:</label>
+                                        <input className="form-control is-invalid"  type="number"  {...register('so_tang',{required:"Phải nhập số tầng"})} />   
+                                       {errors.so_tang && (<p className="text-red-500">{errors.so_tang.message}</p>)}
+                                
                                       </div>
                                       <div className="col-sm-6">
-                                        <label className="form-label">Trạng thái:</label>
-                                        <select className="form-select" aria-label="Default select example">
-                                          <option selected>Trống</option>
-                                          <option value={1}>Đã cho thuê</option>
-                                          <option value={2}>Bảo trì</option>
-                                        </select>
+                                        <label className="form-label">Tiện ích:</label>
+                                         <input className="form-control is-invalid"  type="text"  {...register('tien_ich',{required:"Phải nhập tên tòa nhà"})}/>   
+                                      {errors.tien_ich && (
+          <p className="text-red-500">{errors.tien_ich.message}</p>
+        )}
                                       </div>
-                                      <div className="col-lg-3 col-sm-6">
-                                        <label className="form-label" htmlFor="exampleFormControlInput1">Diện tích: <span className="txt-danger">*</span></label>
-                                        <input className="form-control" id="exampleFormControlInput1" type="text" />
-                                      </div>
-                                      <div className="col-lg-3 col-sm-6">
-                                        <label className="form-label" htmlFor="exampleFormControlInputa">Số người tối đa: <span className="txt-danger">*</span></label>
-                                        <input className="form-control" id="exampleFormControlInputa" type="number" defaultValue={7} min={0} />
-                                      </div>
-                                      <div className="col-lg-3 col-sm-6"> 
-                                        <label className="form-label" htmlFor="exampleFormControlInputb">Giá thuê: <span className="txt-danger">*</span></label>
-                                        <input className="form-control" id="exampleFormControlInputb" type="number" />
-                                      </div>
-                                      <div className="col-lg-3 col-sm-6"> 
-                                        <label className="form-label" htmlFor="exampleFormControlInputc">Tiện nghi: <span className="txt-danger">*</span></label>
-                                        <input className="form-control" id="exampleFormControlInputc" type="number" />
-                                      </div>
-                                      <div className="col-12"> 
-                                      </div>
+                                      
                                     </div>
                                    <button type='submit' className="btn btn-primary" >Thêm phòng</button>
                             </form>
@@ -194,9 +128,9 @@ const AddCourt = () => {
           </div>
           <div className="col-md-6 p-0">
             <p className="heart mb-0">Hand crafted &amp; made with
-              <svg className="footer-icon">
+              {/* <svg className="footer-icon">
                 <use href="https://admin.pixelstrap.net/zono/assets/svg/icon-sprite.svg#heart" />
-              </svg>
+              </svg> */}
             </p>
           </div>
         </div>
