@@ -13,23 +13,12 @@ class HopDong extends Model
     protected $fillable = [
         'phong_id',
         'khach_id',
-        'ho_ten',
         'ngay_bat_dau',
         'ngay_ket_thuc',
         'gia_thue',
-        'so_dien_thoai',
-        'email',
-        'dia_chi_thuong_tru',
-        'cccd',
-        'phuong_thuc_dat_coc',
         'so_tien_dat_coc',
+        'phuong_thuc_dat_coc',
         'trang_thai',
-        'tinh_trang_phong',
-        'dich_vu',
-        'dieu_khoan',
-        'link_hop_dong_pdf',
-        'hinh_thuc_ky',
-        'ky_thanh_toan',
         'ngay_ky',
         'is_gia_han',
         'hop_dong_cha_id',
@@ -39,10 +28,11 @@ class HopDong extends Model
     ];
 
     protected $casts = [
-        'ngay_bat_dau' => 'date',
-        'ngay_ket_thuc' => 'date',
-        'gia_thue' => 'decimal:2',
-        'so_tien_dat_coc' => 'decimal:2',
+        'ngay_bat_dau'     => 'date',
+        'ngay_ket_thuc'    => 'date',
+        'ngay_ky'          => 'date',
+        'gia_thue'         => 'decimal:2',
+        'so_tien_dat_coc'  => 'decimal:2',
     ];
 
     public function phong()
