@@ -1,26 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ToaNha;
+use App\Models\Phong;
 
-
-class ToaNhaController extends Controller
+class PhongController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        try {
-            $toanha = ToaNha::all(); // Lấy tất cả các phòng từ database
+           try {
+            $rooms = Phong::all(); // Lấy tất cả các phòng từ database
 
             return response()->json([
                 'status' => true,
-                'message' => 'Lấy danh sách tòa nhà thành công',
-                'data' => $toanha
+                'message' => 'Lấy danh sách phòng thành công',
+                'data' => $rooms
             ]);
         } catch (\Exception $e) {
             return response()->json([
@@ -43,19 +42,7 @@ class ToaNhaController extends Controller
      */
     public function store(Request $request)
     {
-           $request->validate([
-            'ten_toa_nha' => 'required|string|max:100',
-            'dia_chi' => 'nullable|string|max:255',
-            'so_tang' => 'nullable|integer',
-            'tien_ich' => 'nullable|string',
-        ]);
-
-        $toaNha = ToaNha::create($request->all());
-
-        return response()->json([
-            'message' => 'Thêm tòa nhà thành công',
-            'toa_nha' => $toaNha,
-        ]);
+        //
     }
 
     /**
@@ -63,8 +50,29 @@ class ToaNhaController extends Controller
      */
     public function show(string $id)
     {
-        //
+         try {
+            $room = Phong::find($id); // Tìm phòng theo ID
+
+            if (!$room) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Không tìm thấy phòng'
+                ], 404);
+            }
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Lấy thông tin phòng thành công',
+                'data' => $room
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Có lỗi xảy ra: ' . $e->getMessage()
+            ], 500);
+        }
     }
+    
 
     /**
      * Show the form for editing the specified resource.
