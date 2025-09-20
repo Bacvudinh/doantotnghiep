@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\PhongController;
 use App\Http\Controllers\Admin\TangController;
 use App\Http\Controllers\Admin\ToaNhaController;
 
-use App\Http\Controllers\DatPhongController;
+use App\Http\Controllers\Client\DatPhongController;
 
 use App\Http\Controllers\AuthController;
 
@@ -23,7 +23,5 @@ Route::post('/themtang', [ TangController::class, 'store']);
 Route::post('/themtoanha', [ ToaNhaController::class, 'store']);
 
 Route::post('/datphong', [DatPhongController::class, 'store']);
-
-
 Route::get('/taotaikhoan', [AuthController::class, 'register']);
 

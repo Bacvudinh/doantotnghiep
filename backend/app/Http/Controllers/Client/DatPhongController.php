@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HopDong;
 use App\Models\Phong;
@@ -13,7 +14,7 @@ class DatPhongController extends Controller
     {
         $validated = $request->validate([
             'phong_id'       => 'required|exists:phong,id',
-            'khach_id'       => 'required|exists:tai_khoan_su_dung,id', // bảng user/khách
+            'khach_id'       => 'required|exists:tai_khoan_su_dung,id',
             'ho_ten'         => 'required|string|max:100',
             'ngay_bat_dau'   => 'required|date|after_or_equal:today',
             'ngay_ket_thuc'  => 'required|date|after:ngay_bat_dau',
@@ -36,6 +37,7 @@ class DatPhongController extends Controller
                     'message' => 'Phòng không còn trống'
                 ], 400);
             }
+
             // Tạo hợp đồng
             $hopDong = HopDong::create([
                 'phong_id'       => $validated['phong_id'],
@@ -62,7 +64,6 @@ class DatPhongController extends Controller
                 'message' => 'Đặt phòng thành công',
                 'data' => $hopDong
             ], 201);
-
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json([
