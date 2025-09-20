@@ -7,24 +7,24 @@ const SideBar = (props: Props) => {
   return (
     <div>
         <div className="menu-section">
-    <Link to={`/admin`}><a  className="menu-item"><i className="fa-solid fa-chart-line"></i><span>Thống Kê</span></a></Link>
+    <Link to={`/admin`}><div  className="menu-item"><i className="fa-solid fa-chart-line"></i><span>Thống Kê</span></div></Link>
    
   </div>
    <div className="menu-section">
     
-   <Link to={`/list-products`}><a className="menu-item"><i className="fa-solid fa-house"></i><span>Quản lý phòng</span></a></Link> 
-    <Link to={`/category`}><a  className="menu-item"><i className="fa-solid fa-layer-group"/><span>Quản lý tầng</span></a></Link>
-    <Link to={`/court`}><a  className="menu-item"><i className="fa fa-circle-info" /><span>Quản lý tòa</span></a></Link>
-    <Link to={`/order-list`}><a  className="menu-item"><i className="fa-solid fa-bars-progress"></i><span>Quản lý đơn hàng</span></a></Link>
-    <Link to={`/article-list`}><a  className="menu-item"><i className="fa-solid fa-pen"/><span>Quản lý bài viết</span></a></Link>
+   <Link to={`/list-products`}><div className="menu-item"><i className="fa-solid fa-house"></i><span>Quản lý phòng</span></div></Link> 
+    <Link to={`/category`}><div  className="menu-item"><i className="fa-solid fa-layer-group"/><span>Quản lý tầng</span></div></Link>
+    <Link to={`/court`}><div  className="menu-item"><i className="fa fa-circle-info" /><span>Quản lý tòa</span></div></Link>
+    <Link to={`/order-list`}><div  className="menu-item"><i className="fa-solid fa-bars-progress"></i><span>Quản lý đơn hàng</span></div></Link>
+    <Link to={`/article-list`}><div  className="menu-item"><i className="fa-solid fa-pen"/><span>Quản lý bài viết</span></div></Link>
     
   </div>
   <div className="menu-section">
     
-    <Link to={`/user`}><a className="menu-item"><i className="fa-solid fa-users"></i><span> Quản lý người dùng</span></a></Link>
-    <Link to={`/report`}><a  className="menu-item"><i className="fa-solid fa-newspaper"></i><span>Quản lý báo cáo</span></a></Link>
-    <Link to={`/revenue`}><a  className="menu-item"><i className="fa-solid fa-file-invoice-dollar"/><span>Quản lý doanh thu</span></a></Link>
-     <Link to={`/phone`}><a href="#" className="menu-item"><i className="fa-solid fa-phone"></i><span>Liên hệ</span></a></Link>
+    <Link to={`/user`}><div className="menu-item"><i className="fa-solid fa-users"></i><span> Quản lý người dùng</span></div></Link>
+    <Link to={`/report`}><div  className="menu-item"><i className="fa-solid fa-newspaper"></i><span>Quản lý báo cáo</span></div></Link>
+    <Link to={`/revenue`}><div  className="menu-item"><i className="fa-solid fa-file-invoice-dollar"/><span>Quản lý doanh thu</span></div></Link>
+     <Link to={`/phone`}><div  className="menu-item"><i className="fa-solid fa-phone"></i><span>Liên hệ</span></div></Link>
   </div>
     </div>
   )

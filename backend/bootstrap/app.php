@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => \App\Http\Middleware\AdminMiddleware::class, //'admin' cái chữ trong ngoặc này để sang bên router Route::middleware(['auth:sanctum', 'admin'])->get('...); nghĩa là chỉ admin mới dùng được router này'
             'client' => \App\Http\Middleware\ClientMiddleware::class,
         ]);
+        
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
 
         $middleware->web(append: [
