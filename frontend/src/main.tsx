@@ -12,7 +12,7 @@ import App from "./App";
 // import './assets/css/owl.carousel.min.css';
 // import './assets/css/slicknav.min.css';
 // import './assets/css/style.css';
-import './assets/admin/cssadmin/font-awesome.css';
+// import './assets/admin/cssadmin/font-awesome.css';
 import "./assets/admin/cssadmin/vendors/icofont.css" 
  import "./assets/admin/cssadmin/vendors/themify.css"
 import "./assets/admin/cssadmin/vendors/flag-icon.css"
