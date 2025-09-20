@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Phong;
 use Illuminate\Support\Facades\Log;
 use App\Models\PhongAnh;
-
 class PhongController extends Controller
 {
     public function store(Request $request)
@@ -26,7 +25,7 @@ class PhongController extends Controller
             //      'hinh_anh_chinh' => 'nullable|image|mimes:jpg,png|max:2048',
             // 'anh_phu' => 'nullable|array', // khai báo phải là mảng
             // 'anh_phu.*' => 'image|mimes:jpg,png|max:2048', // từng ảnh con
-// ẩn mấy cái màu xanh vì ko upload file mà lưu đường dẫn thôi và để test api, nếu k thì phải upload file lên server rồi lấy đường dẫn lưu vào db, nếu có upload file thì bỏ mấy cái màu xanh kia đi
+            // ẩn mấy cái màu xanh vì ko upload file mà lưu đường dẫn thôi và để test api, nếu k thì phải upload file lên server rồi lấy đường dẫn lưu vào db, nếu có upload file thì bỏ mấy cái màu xanh kia đi
         ]);
         $hinhAnhChinh = $request->hinh_anh_chinh ?? null;
         // 1. Upload ảnh chính (nếu có)
@@ -45,7 +44,6 @@ class PhongController extends Controller
             'tien_nghi' => $request->tien_nghi,
             'hinh_anh' => $hinhAnhChinh, // ảnh chính
             'trang_thai' => $request->trang_thai ?? 'trong',
-
         ]);
         //4 Lưu ảnh chính vào bảng phong_anh (la_anh_chinh = true)
         // Lưu ảnh chính
@@ -56,7 +54,6 @@ class PhongController extends Controller
                 'la_anh_chinh' => true,
             ]);
         }
-
         // Lưu ảnh phụ
         if ($request->anh_phu) {
             foreach ($request->anh_phu as $path) {
@@ -67,8 +64,6 @@ class PhongController extends Controller
                 ]);
             }
         }
-
-
         Log::debug('Phòng đã được tạo:', $phong->toArray());
         return response()->json([
             'message' => 'Tạo phòng thành công',
